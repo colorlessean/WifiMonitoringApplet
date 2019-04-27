@@ -1,23 +1,24 @@
 from Interface.interface import *
 from Logic.logic import *
+import os
 
 # Function to build temp file that data will be streamed to
-def tempFileBuilder():
-    # Check if File exists
-
-    # Create File if it has not been created
-
+def tempFileConstructor(filename):
+    open(filename, 'a').close()
     return
 
 # Function to destroy temp file that data was streamed to
-def tempFileDestructor():
+def tempFileDestructor(filename):
     # Delete File if flag for deletion has been set
-
+    os.remove(filename)
     return
 
 def main():
-    tempFileBuilder()
-    logic()
+    filename = os.curdir + "\\temp.txt"
+    print(filename)
+    tempFileConstructor(filename)
+    logic(filename)
+    tempFileDestructor(filename)
     return
 
 # Runs as script remove in final application

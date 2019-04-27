@@ -8,7 +8,7 @@ B_TO_MB = 1024
 
 # Main function of the Logic Package responsible for returning ping information
 # Runs function to ping the websites and packages data into Matplotlib readable format to return on
-def logic():
+def logic(filename):
 
     for i in range(0, 100):
         if i % 10 == 0:
@@ -83,7 +83,7 @@ def pingWebsite(websiteAddr, debug=False):
 
     return speed
 
-def outputToFile():
+def outputToFile(filename):
 
 
     return
